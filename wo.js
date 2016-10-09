@@ -50,7 +50,11 @@ window.wo = (function() {
                 html += self.fetch(template, item);
             });
             
+            
             var into = this.template.getAttribute('into');
+            this.template = null;
+            this.data = [];
+            
             if (into) {
                 return document.getElementById(into).innerHTML = html;
             }
