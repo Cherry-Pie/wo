@@ -45,11 +45,13 @@ window.wo = (function() {
             if (!this.data.length) {
                 this.data.push('');
             }
+            
             var html = '';
             this.data.forEach(function(item) {
-                html += self.fetch(template, item);
+                if (item) {
+                    html += self.fetch(template, item);
+                }
             });
-            
             
             var into = this.template.getAttribute('into');
             this.template = null;
